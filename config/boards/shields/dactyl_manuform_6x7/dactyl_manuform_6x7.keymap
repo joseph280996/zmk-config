@@ -85,7 +85,7 @@
             &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       
             &trans      &none       &kp HOME    &kp UP      &kp END     &none       &none       &none       &none       &none       &none       &none       &none       &none
             &trans      &none       &kp LEFT    &kp DOWN    &kp RIGHT   &none       &none       &none       &none       &none       &none       &none       &none       &none
-            &none       &none       &none       &DKTP_P     &DKTP_N     &none       &trans      &trans      &none       &none       &none       &none       &none       &none
+            &none       &none       &none       &kp DKTP_P  &kp DKTP_N  &none       &trans      &trans      &none       &none       &none       &none       &none       &none
             &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &none       &none       &none       &none
                                     &trans      &trans      &trans      &trans                              &trans      &trans      &bootloader &reset 
 			>;
