@@ -3,8 +3,15 @@ if SHIELD_DACTYL_MANUFORM_6x7_LEFT
 config ZMK_KEYBOARD_NAME
     default "Dactyl Manuform"
 
-config ZMK_SPLIT_BLE_ROLE_CENTRAL
+config ZMK_SPLIT_ROLE_CENTRAL
     default y
+
+endif
+
+if SHIELD_SCYLLA_RIGHT
+
+config ZMK_KEYBOARD_NAME
+	default "Scylla Right"
 
 endif
 
