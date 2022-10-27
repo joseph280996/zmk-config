@@ -8,10 +8,10 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
-if SHIELD_SCYLLA_RIGHT
+if SHIELD_DACTYL_MANUFORM_6x7_RIGHT
 
 config ZMK_KEYBOARD_NAME
-	default "Scylla Right"
+	default "Dactyl Right"
 
 endif
 
