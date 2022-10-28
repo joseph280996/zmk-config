@@ -16,11 +16,13 @@
 #define BTAB            LS(TAB)
 #define TAB_R           LC(TAB)
 #define TAB_L           LS(LC(TAB))
-#define TAB_N           LC(N)
+#define TAB_N           LC(T)
 #define TAB_C           LC(W) 
 #define PRIV            LS(LC(N))
 #define DKTP_N          LG(LC(RIGHT))
 #define DKTP_P          LG(LC(LEFT))
+#define DKTP_MNG		LG(TAB)	
+#define S_GLB			LC(LS(F))
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS DEL BSPC LSHFT RSHFT>;
@@ -51,75 +53,75 @@
 //                                    '---------------'                                      '---------------'
 
 			bindings = <
-			&kp ESC     &kp F1      &kp F2    	&kp F3    &kp F4    &kp F5    &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12     &kp DEL
-			&kp GRAVE   &kp N1      &kp N2    	&kp N3    &kp N4    &kp N5    &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS   &kp EQUAL   &kp C_MUTE
-			&kp TAB     &kp Q       &kp W     	&kp E     &kp R     &kp T     &kp LBKT    &kp RBKT    &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSLH
-			&kp BTAB    &kp A       &kp S     	&kp D     &kp F     &kp G     &kp INS     &kp SLCK    &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp APOS
-			&caps_word  &kp Z       &kp X     	&kp C     &kp V     &kp B                             &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH   &kp PRIV
-			&kp TAB_N   &kp TAB_C   &kp TAB_L 	&kp TAB_R &mo RAISE &kp LGUI                          &kp K_CMENU &tog LOWER   &kp HOME    &kp END     &kp PG_DN   &kp PG_UP
-									&kp BSPC	&kp LSHFT &kp LCTRL &kp LALT                          &kp RCTRL   &kp RALT 	  &kp SPACE   &kp ENTER   
+&kp ESC     &kp F1      &kp F2    	&kp F3    &kp F4    &kp F5    &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12     &kp DEL
+&kp GRAVE   &kp N1      &kp N2    	&kp N3    &kp N4    &kp N5    &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS   &kp EQUAL   &kp C_MUTE
+&kp TAB     &kp Q       &kp W     	&kp E     &kp R     &kp T     &kp LBKT    &kp RBKT    &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSLH
+&kp BTAB    &kp A       &kp S     	&kp D     &kp F     &kp G     &kp INS     &kp SLCK    &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp APOS
+&caps_word  &kp Z       &kp X     	&kp C     &kp V     &kp B                             &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH   &kp PRIV
+&kp TAB_N   &kp TAB_C   &kp TAB_L 	&kp TAB_R &mo LOWER &kp LGUI                          &kp K_CMENU &mo RAISE   &kp HOME    &kp END     &kp PG_DN   &kp PG_UP
+						&kp BSPC	&kp LSHFT &kp LALT 	&kp LCTRL                         &kp RCTRL   &kp RALT 	  &kp SPACE   &kp ENTER   
 			>;
 		};
 
 		lower_layer {
-// .-------------------------------------------------------.                                  .---------------------------------------------------.
-// | Esc   |  F1   |  F2   |   F3   |  F4   |  F5  |  F6   |                                  |  F7  |  F8  |  F9  |  F10 |  F11 |  F12  |   DEL  |
-// |-------+-------+-------+--------+-------+------+-------|                                  |------+------+------+------+------+-------+--------|
-// |       |       |       |        |       |      |       |                                  |      |      |      |      |      |       |        |
-// |-------+-------+-------+--------+-------+------+-------|                                  |------+------+------+------+------+-------+--------|
-// | Tab>  |       |  Home |   UP   |  End  |      |       |                                  |      |      |      |      |      |       |        |
-// |-------+-------+-------+--------+-------+------+-------|                                  |------+------+------+------+------+-------+--------|
-// | <Tab  |       |  Left |  Down  | Right |      |  INS  |                                  | SLCK |      |      |      |      |       |        |
-// |-------+-------+-------+--------+-------+------+-------/                                  \------+------+------+------+------+-------+--------|
-// | CAPS  |       |       |        |       |      |                                                 |      |      |      |      |       |        |
-// |-------+-------+-------+--------+-------+------/                                                 \------+------+------+------+-------+--------|
-// | TAB_N | TAB_C | TAB_L | TAB_R |                                                                               |      |      |       |        |
-// '-------------------------------/-------.                                                               .-------\------------------------------'
-//                                /  Win  /---------------.                                 .---------------\  Menu \  
-//                               '-------/ Shift / Space /                                   \ Boot \ Enter  \-------\ 
-//                              / RAISE /---------------/                                     \---------------\ LOWER \
-//                             '-------/  Ctrl /  Opt  /                                       \ Reset \  Ctrl \-------'
-//                                    '---------------'                                         '---------------'
+// .-------------------------------------------------------------.                              .-----------------------------------------------------.
+// | Esc      |  F1   |  F2    |   F3   |  F4    |  F5   |  F6   |                              |  F7  |  F8  |   F9   |  F10 |  F11 |  F12  |   DEL  |
+// |----------+-------+--------+--------+--------+-------+-------|                              |------+------+--------+------+------+-------+--------|
+// |          |       |        |        |        |       |       |                              |      |      | NUM_LK |   /  |   *  |   -   |        |
+// |----------+-------+--------+--------+--------+-------+-------|                              |------+------+--------+------+------+-------+--------|
+// | DKTP_MNG |       | DKTP_P |   UP   | DKTP_N |       |       |                              |      |      |    7   |   8  |   9  |   +   |        |
+// |----------+-------+--------+--------+--------+-------+-------|                              |------+------+--------+------+------+-------+--------|
+// |          |       |  Left  |  Down  | Right  | S_GLB |  INS  |                              | SLCK |      |    4   |   5  |   6  |       |        |
+// |----------+-------+--------+--------+--------+-------+-------/                              \------+------+--------+------+------+-------+--------|
+// |          |       |        |        |  	     |       |                                             |      |    1   |   2  |   3  |       |        |
+// |----------+-------+--------+--------+--------+-------/                                             \------+--------+------+------+-------+--------|
+// | TAB_N    | TAB_C | TAB_L  | TAB_R  |                                                                             |      |      |       |        |
+// '------------------------------------/-------.                                                             .-------\------------------------------'
+//                                     /  Win  /---------------.                               .---------------\  Menu \  
+//                                    '-------/ Shift / Space /                                 \ Boot \ Enter  \-------\ 
+//                                   / RAISE /---------------/                                   \---------------\ LOWER \
+//                                  '-------/  Ctrl /  Opt  /                                     \ Reset \  Ctrl \-------'
+//                                         '---------------'                                       '---------------'
 
 			bindings = <
-			&kp ESC     &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12     &kp DEL
-            &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       
-            &trans      &none       &kp HOME    &kp UP      &kp END     &none       &none       &none       &none       &none       &none       &none       &none       &none
-            &trans      &none       &kp LEFT    &kp DOWN    &kp RIGHT   &none       &none       &none       &none       &none       &none       &none       &none       &none
-            &none       &none       &none       &kp DKTP_P  &kp DKTP_N  &none       &trans      &trans      &none       &none       &none       &none       &none       &none
-            &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &none       &none       &none       &none
-                                    &trans      &trans      &trans      &trans                              &trans      &trans      &bootloader &reset 
+&kp ESC     	&kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10		&kp F11     	&kp F12     &kp DEL
+&none       	&none       &none       &none       &none       &none       &none       &none       &none       &LNLCK      &KP_SLASH   &KP_ASTERISK	&KP_MINUS       &none       
+&kp DKTP_MNG    &none       &kp HOME    &kp UP      &kp END     &none       &none       &none       &none       &KP_N7      &KP_N8      &KP_N9       	&KP_PLUS       &none
+&none      		&none       &kp LEFT    &kp DOWN    &kp RIGHT   &none       &trans      &trans      &none       &KP_N4      &KP_N5      &KP_N6       	&none       &none
+&none       	&none       &none       &kp DKTP_P  &kp DKTP_N  &none       		    	        &none       &KP_N1      &KP_N2      &KP_N3       	&none       &none
+&trans      	&trans      &trans      &trans      &trans      &trans                              &trans      &trans      &KP_N0      &KP_DOT       	&none       &none
+                        	&trans      &trans      &trans      &trans                              &trans      &trans      &bootloader &reset 
 			>;
 		};
 
 		raise_layer {
-// .--------------------------------------------------------.                                  .---------------------------------------------------.
-// | BT Clr |  BT1  |  BT2  |   BT3  |  BT4  |  BT5 |       |                                  |      |      |      |      |      |       |   BLE  |
-// |--------+-------+-------+--------+-------+------+-------|                                  |------+------+------+------+------+-------+--------|
-// | BT Nxt |       |       |        |       |      |   V+  |                                  |  B+  |      |      |      |      |       |   USB  |
-// |--------+-------+-------+--------+-------+------+-------|                                  |------+------+------+------+------+-------+--------|
-// | BT Prv |       |       |        |       |      |   V-  |                                  |  B-  |  <<  | play |  >>  |      |       |        |
-// |--------+-------+-------+--------+-------+------+-------|                                  |------+------+------+------+------+-------+--------|
-// |        |       |       |        |       |      |       |                                  |      |      |      |      |      |       |        |
-// |--------+-------+-------+--------+-------+------+-------/                                  \------+------+------+------+------+-------+--------|
-// |        |       |       |        |       |      |                                                 |      |      |      |      |       |        |
-// |--------+-------+-------+--------+-------+------/                                                 \------+------+------+------+-------+--------|
-// |        |       |       |        |                                                                               |      |      |       |        |
-// '--------------------------------/-------.                                                               .-------\------------------------------'
-//                                 /       /---------------.                                 .---------------\       \  
-//                                '-------/       /       /                                   \      \        \-------\ 
-//                               /       /---------------/                                     \---------------\       \
-//                              '-------/       /       /                                       \      \       \-------'
-//                                     '---------------'                                         '---------------'
+// .--------------------------------------------------------.                               .---------------------------------------------------.
+// | BT Clr |  BT1  |  BT2  |   BT3  |  BT4  |  BT5 |       |                               |      |      |      |      |      |       |   BLE  |
+// |--------+-------+-------+--------+-------+------+-------|                               |------+------+------+------+------+-------+--------|
+// |        |       |       |        |       |      |       |                               |      |      |      |      |      |       |   USB  |
+// |--------+-------+-------+--------+-------+------+-------|                               |------+------+------+------+------+-------+--------|
+// | BT Nxt |       |  <<   |  play  |   >>  |      |       |                               |      |      |      |      |      |       |        |
+// |--------+-------+-------+--------+-------+------+-------|                               |------+------+------+------+------+-------+--------|
+// | BT Prv |       |       |        |       |      |       |                               |      |      |      |      |      |       |        |
+// |--------+-------+-------+--------+-------+------+-------/                               \------+------+------+------+------+-------+--------|
+// |        |       |       |        |       |      |                                              |      |      |      |      |       |        |
+// |--------+-------+-------+--------+-------+------/                                              \------+------+------+------+-------+--------|
+// |   V+   |   V-  |  B+   |   B-   |                                                                            |      |      |       |        |
+// '--------------------------------/-------.                                                             .-------\------------------------------'
+//                                 /  Win  /---------------.                               .---------------\  Menu \  
+//                                '-------/ Shift / Bkspc /                                 \ Space \ Enter \-------\ 
+//                               / RAISE /---------------/                                   \---------------\ LOWER \
+//                              '-------/  Ctrl /  Opt  /                                     \  Opt  \  Ctrl \-------'
+//                                     '---------------'                                       '---------------'
 
 			bindings = <
-			&bt BT_CLR  	&bt BT_SEL 0  	&bt BT_SEL 1  	&bt BT_SEL 2  	&bt BT_SEL 3  	&bt BT_SEL 4    &none           &none           &none       &none       &none       &none       &none       &out OUT_BLE
-            &bt BT_NXT      &none           &none           &none           &none           &none           &kp C_VOL_UP    &kp C_BRI_UP    &none       &none       &none       &none       &none       &out OUT_USB       
-            &bt BT_PRV      &none           &none           &none           &none           &none           &kp C_VOL_DN    &kp C_BRI_DN    &kp C_PREV  &kp C_PP    &kp C_NEXT  &none       &none       &none
-            &none           &none           &none           &none           &none           &none           &none           &none           &none       &none       &none       &none       &none       &none
-            &none           &none           &none           &none           &none           &none           &none           &none           &none       &none       &none       &none       &none       &none
-            &none           &none           &none           &none           &none           &none                                           &none       &none       &none       &none       &none       &none
-                                            &none           &none           &none           &none                                           &none       &none       &none       &none 
+&bt BT_CLR  	&bt BT_SEL 0  	&bt BT_SEL 1  	&bt BT_SEL 2  	&bt BT_SEL 3  	&bt BT_SEL 4    &none           &none           &none       &none       &none       &none       &none       &out OUT_BLE
+&none     		&none           &none           &none           &none           &none           &none    		&none    		&none       &none       &none       &none       &none       &out OUT_USB       
+&bt BT_NXT      &none           &kp C_PREV  	&kp C_PP    	&kp C_NEXT      &none			&none			&none		    &none       &none       &none		&none       &none       &none
+&bt BT_PRV      &none           &none           &none           &none           &none           &none           &none           &none       &none       &none       &none       &none       &none
+&none           &none           &none           &none           &none           &none           					            &none       &none       &none       &none       &none       &none
+&kp C_VOL_UP	&kp C_VOL_DN	&kp C_BRI_UP	&kp C_BRI_DN	&none           &kp LGUI 								       	&kp K_CMENU &none       &none       &none		&none		&none
+								&kp BSPC		&kp LSHFT 		&kp LALT 		&kp LCTRL                         				&kp RCTRL   &kp RALT 	&kp SPACE   &kp ENTER   
 			>;
 		};
 	};
