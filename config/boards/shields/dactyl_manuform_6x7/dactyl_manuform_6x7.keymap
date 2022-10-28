@@ -57,7 +57,7 @@
 			&kp BTAB    &kp A       &kp S     	&kp D     &kp F     &kp G     &kp INS     &kp SLCK    &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp APOS
 			&caps_word  &kp Z       &kp X     	&kp C     &kp V     &kp B                             &kp M       &kp N       &kp COMMA   &kp DOT     &kp SLASH   &kp PRIV
 			&kp TAB_N   &kp TAB_C   &kp TAB_L 	&kp TAB_R &kp RAISE &kp LGUI                          &kp K_CMENU &kp LOWER   &kp HOME    &kp END     &kp PG_DN   &kp PG_UP
-									&kp BSPC	&kp LSHFT &kp LCTRL &kp LALT                          &kp ENTER   &kp RCTRL   &kp SPACE   &kp RALT 
+									&kp BSPC	&kp LSHFT &kp LCTRL &kp LALT                          &kp RCTRL   &kp RALT 	  &kp SPACE   &kp ENTER   
 			>;
 		};
 
