@@ -46,9 +46,9 @@
 // |-------+-------+-------+-------+------+------/                                                \------+------+------+------+-------+--------|
 // | TAB_N | TAB_C | TAB_L | TAB_R |                                                                            | HOME |  END | PG_UP | PG_DWN |
 // '-------------------------------/-------.                                                            .-------\------------------------------'
-//                                /  Win  /---------------.                              .---------------\  Menu \  
+//                                / RAISE /---------------.                              .---------------\ LOWER \  
 //                               '-------/ Shift / Bkspc /                                \ Space \ Enter \-------\ 
-//                              / RAISE /---------------/                                  \---------------\ LOWER \
+//                              /  Win  /---------------/                                  \---------------\  Menu \
 //                             '-------/  Ctrl /  Opt  /                                    \  Opt  \  Ctrl \-------'
 //                                    '---------------'                                      '---------------'
 
@@ -58,7 +58,7 @@
 &kp TAB     &kp Q       &kp W     	&kp E     &kp R     &kp T     &kp LBKT    &kp RBKT    &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSLH
 &kp BTAB    &kp A       &kp S     	&kp D     &kp F     &kp G     &kp INS     &kp SLCK    &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp APOS
 &caps_word  &kp Z       &kp X     	&kp C     &kp V     &kp B                             &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH   &kp PRIV
-&kp TAB_N   &kp TAB_C   &kp TAB_L 	&kp TAB_R &kp LGUI  &mo LOWER                         &mo RAISE   &kp K_CMENU &kp HOME    &kp END     &kp PG_DN   &kp PG_UP
+&kp TAB_N   &kp TAB_C   &kp TAB_L 	&kp TAB_R &kp LGUI  &mo RAISE                         &mo LOWER   &kp K_CMENU &kp HOME    &kp END     &kp PG_DN   &kp PG_UP
 						&kp BSPC	&kp LSHFT &kp LALT 	&kp LCTRL                         &kp RCTRL   &kp RALT 	  &kp SPACE   &kp ENTER   
 			>;
 		};
@@ -73,23 +73,23 @@
 // |----------+-------+--------+--------+--------+-------+-------|                              |------+------+--------+------+------+-------+--------|
 // |          |       |  Left  |  Down  | Right  | S_GLB |  INS  |                              | SLCK |      |    4   |   5  |   6  |       |        |
 // |----------+-------+--------+--------+--------+-------+-------/                              \------+------+--------+------+------+-------+--------|
-// |          |       |        |        |  	     |       |                                             |      |    1   |   2  |   3  |       |        |
+// |  Shift   |       |        |        |  	     |       |                                             |      |    1   |   2  |   3  |       |        |
 // |----------+-------+--------+--------+--------+-------/                                             \------+--------+------+------+-------+--------|
-// | TAB_N    | TAB_C | TAB_L  | TAB_R  |                                                                             |      |      |       |        |
-// '------------------------------------/-------.                                                             .-------\------------------------------'
-//                                     /  Win  /---------------.                               .---------------\  Menu \  
-//                                    '-------/ Shift / Space /                                 \ Boot \ Enter  \-------\ 
-//                                   / RAISE /---------------/                                   \---------------\ LOWER \
-//                                  '-------/  Ctrl /  Opt  /                                     \ Reset \  Ctrl \-------'
-//                                         '---------------'                                       '---------------'
+// |   Ctr    |  Opt  | TAB_L  | TAB_R  |                                                                              |      |      |       |        |
+// '------------------------------------/-------.                                                              .-------\------------------------------'
+//                                     / RAISE /---------------.                                .---------------\ LOWER \  
+//                                    '-------/ Shift / Space /                                  \ Boot \ Enter  \-------\ 
+//                                   /  Win  /---------------/                                    \---------------\  Menu \
+//                                  '-------/  Ctrl /  Opt  /                                      \ Reset \  Ctrl \-------'
+//                                         '---------------'                                        '---------------'
 
 			bindings = <
 &kp ESC     	&kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      	&kp F10			&kp F11     		&kp F12     	&kp DEL
 &none       	&none       &none       &none       &none		&none       &none       &none       &none       &kp LNLCK      	&kp KP_SLASH   	&kp KP_ASTERISK		&kp KP_MINUS   	&none       
 &kp DKTP_MNG    &none       &kp DKTP_P  &kp UP		&kp DKTP_N	&none       &none       &none       &none       &kp KP_N7     	&kp KP_N8      	&kp KP_N9       	&kp KP_PLUS    	&none
 &none      		&none       &kp LEFT    &kp DOWN    &kp RIGHT   &kp S_GLB	&trans      &trans      &none       &kp KP_N4      	&kp KP_N5      	&kp KP_N6       	&none       	&none
-&none       	&none       &none       &none  		&none		&none       		    	        &none       &kp KP_N1      	&kp KP_N2      	&kp KP_N3       	&none       	&none
-&trans      	&trans      &trans      &trans      &trans      &trans                              &trans      &trans      	&kp KP_N0      	&kp KP_DOT			&none       	&none
+&kp LSHFT       &none       &none       &none  		&none		&none       		    	        &none       &kp KP_N1      	&kp KP_N2      	&kp KP_N3       	&none       	&none
+&kp LCTRL      	&kp LALT    &trans      &trans      &trans      &trans                              &trans      &trans      	&kp KP_N0      	&kp KP_DOT			&none       	&none
                         	&trans      &trans      &trans      &trans                              &trans      &trans      	&bootloader 	&reset 
 			>;
 		};
@@ -108,9 +108,9 @@
 // |--------+-------+-------+--------+-------+------/                                              \------+------+------+------+-------+--------|
 // |   V+   |   V-  |  B+   |   B-   |                                                                            |      |      |       |        |
 // '--------------------------------/-------.                                                             .-------\------------------------------'
-//                                 /  Win  /---------------.                               .---------------\  Menu \  
+//                                 / RAISE /---------------.                               .---------------\ LOWER \  
 //                                '-------/ Shift / Bkspc /                                 \ Space \ Enter \-------\ 
-//                               / RAISE /---------------/                                   \---------------\ LOWER \
+//                               /  Win  /---------------/                                   \---------------\  Menu \
 //                              '-------/  Ctrl /  Opt  /                                     \  Opt  \  Ctrl \-------'
 //                                     '---------------'                                       '---------------'
 
