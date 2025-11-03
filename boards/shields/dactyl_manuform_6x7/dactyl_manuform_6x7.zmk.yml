@@ -3,7 +3,7 @@ id: dactylmanuform6x7
 name: Dactyl Manuform 6x7
 type: shield
 url: https://github.com/carbonfet/dactyl-manuform
-requires: [pro_micro]
+requires: [nice_nano_v2]
 features:
   - keys
 siblings:
